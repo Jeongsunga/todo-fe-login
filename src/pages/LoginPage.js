@@ -30,6 +30,7 @@ const LoginPage = () => {
       }
     } catch(err) {
       setError(err.message);
+      console.log(error)
       toast.error(err.message);
     }
   }

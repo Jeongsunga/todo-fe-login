@@ -30,7 +30,9 @@ const RegisterPage = () => {
       }
 
     } catch (err) {
+      console.log(err)
       setError(err.message);
+      console.log(error)
       toast.error(err.message);
     }
   };
