@@ -19,6 +19,14 @@ body{
   margin-top:50px !important;
   margin-bottom: 30px;
 }
+.user-info-row{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 60px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* 상단 그림자 */
+}
 .input-box{
   padding: 10px;
   width:100%;
