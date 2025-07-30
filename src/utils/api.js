@@ -10,14 +10,25 @@ const api = axios.create({
 /**
  * console.log all requests and responses
  */
+// api.interceptors.request.use(
+//   (request) => {
+//     console.log("Starting Request", request);
+//     return request;
+//   },
+//   function (error) {
+//     console.log("REQUEST ERROR", error);
+//   }
+// );
+
 api.interceptors.request.use(
-  (request) => {
-    console.log("Starting Request", request);
-    return request;
+  (config) => {
+    const token = sessionStorage.getItem("token");
+    if (token) {
+      config.headers["authorization"] = "Bearer " + token;
+    }
+    return config;
   },
-  function (error) {
-    console.log("REQUEST ERROR", error);
-  }
+  (error) => Promise.reject(error)
 );
 
 api.interceptors.response.use(
